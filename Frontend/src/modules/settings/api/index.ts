@@ -1,0 +1,1 @@
+export { useGetSettingsQuery, useUpdateSettingsMutation, useUpdateEmailMutation, useUpdatePasswordMutation } from './settings-api';

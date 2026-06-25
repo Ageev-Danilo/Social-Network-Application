@@ -1,0 +1,44 @@
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  media PostMedia[]
+  tags  Tag[]
+  links PostLink[]
+  views PostView[]
+}
+
+model PostLink {
+  id     Int    @id @default(autoincrement())
+  url    String
+  postId Int
+  post   Post   @relation(fields: [postId], references: [id])
+}
+
+model PostView {
+  id     Int  @id @default(autoincrement())
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+  postId Int
+  post   Post @relation(fields: [postId], references: [id])
+
+  @@unique([userId, postId])
+}
+
+model PostMedia {
+  id     Int    @id @default(autoincrement())
+  url    String
+  postId Int
+  post   Post   @relation(fields: [postId], references: [id])
+}
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  posts Post[]
+}
