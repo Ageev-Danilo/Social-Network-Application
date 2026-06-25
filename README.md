@@ -279,7 +279,7 @@ The project uses Prisma with SQLite. The schema is defined in the `prisma/` fold
 The SocialNetwork backend includes a full set of features for a social application: authentication, content management, real-time chat, media handling, and modular code organization. It is a good example of combining Express, TypeScript, Prisma, and Socket.IO in one application.
 
 
-# # SocialNetwork — Frontend
+# SocialNetwork — Frontend
 
 **Hapi hapi** — інтерактивний веб-додаток інтернет-магазин з можливістю оформлення замовлень, управління товарами та користувацькими профілями.
 
